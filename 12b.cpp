@@ -31,7 +31,7 @@ int main() {
 	bool visited[N][M];
 	for (int i = 0; i < N; ++i) {
 		for (int j = 0; j < M; ++j) {
-			distance[i][j] = 123'456'789;
+			distance[i][j] = INF;
 			visited[i][j] = false;
 		}
 	}

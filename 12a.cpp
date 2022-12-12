@@ -5,6 +5,8 @@ using namespace std;
 const int N = 41;
 const int M = 172;
 
+const int INF = 123'456'789;
+
 const int DI[4] = { 0, -1, 0, 1 };
 const int DJ[4] = { 1, 0, -1, 0 };
 
@@ -29,7 +31,7 @@ int main() {
 	bool visited[N][M];
 	for (int i = 0; i < N; ++i) {
 		for (int j = 0; j < M; ++j) {
-			distance[i][j] = 123'456'789;
+			distance[i][j] = INF;
 			visited[i][j] = false;
 		}
 	}
