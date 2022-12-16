@@ -3,7 +3,7 @@
 using namespace std;
 
 const int V = 51;
-const int TIME = 5;
+const int TIME = 26;
 const int INF = 123'456'789;
 
 int main() {
