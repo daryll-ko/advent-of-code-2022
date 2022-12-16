@@ -66,7 +66,7 @@ int main() {
 		}
 	}
 
-	for (int k = 1; k <= TIME; ++k) {
+	for (int _ = 1; _ <= TIME; ++_) {
 		// setup
 		int new_dp[V][V][1 << M];
 		for (int i1 = 0; i1 < V; ++i1) {
