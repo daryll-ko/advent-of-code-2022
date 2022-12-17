@@ -10,4 +10,5 @@ Some notes:
 - `16-setup.py` is there to turn the original input for Day 16 into a more digestible one (for C++, at least). The command line process for this specific day would be
 
 $$\verb|python3 16-setup.py < |\underbrace{\verb|input.txt|}_{\text{original input file}}\verb| > output.txt &&|$$
+
 $$\verb|g++ -std=c++20 -o out main.cpp && ./out < output.txt > final_output.txt|$$
