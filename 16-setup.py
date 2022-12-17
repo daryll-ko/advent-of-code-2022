@@ -1,6 +1,5 @@
 with open("input.txt", 'r') as input_file:
     lines = input_file.readlines()
-    print(len(lines))
     for line in lines:
         tokens = line.strip().split()
         u = tokens[1]
