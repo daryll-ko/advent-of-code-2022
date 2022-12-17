@@ -1,6 +1,6 @@
 from typing import List, Tuple
 
-DI = [0, +1, 0, -1]
+DI = [0, 1, 0, -1]
 DJ = [1, 0, -1, 0]
 
 Rock = List[Tuple[int, int]]
