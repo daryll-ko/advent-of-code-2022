@@ -9,6 +9,8 @@ Some notes:
 	- I've no idea why it took me a full week to realize that starting with `with open("input.txt", "r")` made the piping redundant ahaha
 - `16-setup.py` is there to turn the original input for Day 16 into a more digestible one (for C++, at least). The command line process for this specific day would be
 
-$$\verb|python3 16-setup.py > output.txt && g++ -std=c++20 -o out main.cpp && ./out < output.txt > final_output.txt|$$
+	```bash
+	python3 16-setup.py > output.txt && g++ -std=c++20 -o out main.cpp && ./out < output.txt > final_output.txt
+	```
 
-assuming the input file is named `input.txt`.
+	assuming the input file is named `input.txt`.
