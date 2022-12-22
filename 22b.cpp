@@ -58,7 +58,7 @@ int main() {
 		} else if (i == 199 && j / 50 == 0 && d == 1) {
 			return make_tuple(0, 100 + j, 1);
 		} else {
-			return make_tuple((i + DI[d] + R) % R, (j + DJ[d] + C) % C, d);
+			return make_tuple(i + DI[d], j + DJ[d], d);
 		}
 	};
 	auto move = [&](int s) {
