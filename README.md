@@ -1,6 +1,6 @@
 # Advent of Code 2022 solutions
 
-$\verb|¯\(ツ)/¯|$
+$\verb|¯\_(ツ)_/¯|$
 
 Some notes:
 
