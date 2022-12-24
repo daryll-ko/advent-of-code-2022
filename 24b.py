@@ -38,7 +38,7 @@ t1, t2, t3 = -1, -1, -1
 reachable = [[False for _ in range(C)] for _ in range(R)]
 reachable[0][1] = True
 
-for t in range(1, TIME_LIMIT - 1):
+for t in range(1, TIME_LIMIT):
     new_reachable = [[False for _ in range(C)] for _ in range(R)]
     for i in range(R):
         for j in range(C):
@@ -60,7 +60,7 @@ for t in range(1, TIME_LIMIT - 1):
 reachable = [[False for _ in range(C)] for _ in range(R)]
 reachable[R - 1][C - 2] = True
 
-for t in range(1, TIME_LIMIT - 1):
+for t in range(1, TIME_LIMIT):
     new_reachable = [[False for _ in range(C)] for _ in range(R)]
     for i in range(R):
         for j in range(C):
@@ -82,7 +82,7 @@ for t in range(1, TIME_LIMIT - 1):
 reachable = [[False for _ in range(C)] for _ in range(R)]
 reachable[0][1] = True
 
-for t in range(1, TIME_LIMIT - 1):
+for t in range(1, TIME_LIMIT):
     new_reachable = [[False for _ in range(C)] for _ in range(R)]
     for i in range(R):
         for j in range(C):
