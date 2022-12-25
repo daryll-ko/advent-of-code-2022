@@ -7,7 +7,7 @@ const int TIME = 30;
 const int INF = 123'456'789;
 
 int main() {
-	// Let's pretend I never thought of this as an MCMF problem ahahaha...
+	// Let's pretend I never thought of this as an MCF problem ahahaha...
 	map<string, int> to_index;
 	int index = 0, to_flow_rate[V];
 	vector<int> relevant; // indices with flow_rate > 0
