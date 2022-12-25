@@ -1,4 +1,4 @@
-# this is the most fun in my life I've had doing a binary search
+# this is the most fun in my life I've had doing a manual binary search
 
 NO = -10 ** 18
 
