@@ -1,4 +1,4 @@
-# these off-by-one-errors are the end of me
+# these off-by-one errors are the end of me
 
 with open("text-files/input.txt") as input_file:
     lines = input_file.readlines()
