@@ -2,9 +2,9 @@ from collections import defaultdict
 
 INF = 10 ** 18
 
-DI = [-1, -1, -1,  1, 1, 1, 0,  0]
-#     NW   N  NE  SW  S SE  W   E
-DJ = [-1,  0,  1, -1, 0, 1, -1, 1]
+DI = [-1, -1, -1,  1,  1,  1,  0,  0]
+#     NW   N  NE  SW   S  SE   W   E
+DJ = [-1,  0,  1, -1,  0,  1, -1,  1]
 
 # which indices in DI and DJ do we access?
 I = [[0, 1, 2], [3, 4, 5], [0, 6, 3], [2, 7, 5]]
