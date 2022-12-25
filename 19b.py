@@ -1,6 +1,6 @@
 # Ran in 1 minute and 58 seconds, fair enough.
 
-from typing import Tuple
+from typing import Tuple, Callable
 
 INF = 10 ** 10
 T = 32
@@ -14,7 +14,7 @@ def best_starting_with_decorator(
     clay_cost: int,
     obsidian_cost: Tuple[int, int],
     geode_cost: Tuple[int, int]
-):
+) -> Callable[[int, int, int, int, int, int, int, int, int], int]:
     def best_starting_with(
         t: int,
         ore: int,
@@ -25,7 +25,7 @@ def best_starting_with_decorator(
         clay_miners: int,
         obsidian_miners: int,
         geode_miners: int,
-    ):
+    ) -> int:
         state = (
             t,
             ore,
