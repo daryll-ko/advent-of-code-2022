@@ -19,7 +19,7 @@ for i in range(R):
             blizzards_no_d[0].add((i, j))
 
 
-def within(i, j):
+def within(i: int, j: int) -> bool:
     return 1 <= i <= R - 2 and 1 <= j <= C - 2 or (i, j) == (0, 1) or (i, j) == (R - 1, C - 2)
 
 
