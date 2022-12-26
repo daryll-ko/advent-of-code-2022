@@ -1,6 +1,6 @@
 # Ran in 1 minute and 58 seconds, fair enough.
 
-from typing import Tuple, Callable
+from typing import Callable
 
 INF = 10 ** 10
 T = 32
@@ -12,8 +12,8 @@ hash = {}
 def best_starting_with_decorator(
     ore_cost: int,
     clay_cost: int,
-    obsidian_cost: Tuple[int, int],
-    geode_cost: Tuple[int, int]
+    obsidian_cost: tuple[int, int],
+    geode_cost: tuple[int, int]
 ) -> Callable[[int, int, int, int, int, int, int, int, int], int]:
     def best_starting_with(
         t: int,

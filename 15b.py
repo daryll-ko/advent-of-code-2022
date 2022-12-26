@@ -1,11 +1,9 @@
-from typing import Tuple
-
 LIMIT = 4 * 10 ** 6
 
 possible_ranges = [[(0, LIMIT)] for _ in range(LIMIT + 1)]
 
 
-def cut_range(i: int, range: Tuple[int, int]) -> None:
+def cut_range(i: int, range: tuple[int, int]) -> None:
     l1, r1 = range
     global possible_ranges
     new_ranges = []

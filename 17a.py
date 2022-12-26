@@ -1,9 +1,7 @@
-from typing import List, Tuple
-
 DI = [0, 1, 0, -1]
 DJ = [1, 0, -1, 0]
 
-Rock = List[Tuple[int, int]]
+Rock = list[tuple[int, int]]
 
 to_direction = {'>': 0, '<': 2}
 jet_pattern = list(map(lambda c: to_direction[c], list(input())))
@@ -54,7 +52,7 @@ top = 0
 
 
 # (new rock, still ok)
-def push_rock(rock: Rock, d: int) -> Tuple[Rock, bool]:
+def push_rock(rock: Rock, d: int) -> tuple[Rock, bool]:
     new_rock = []
     for i, j in rock:
         new_rock.append((i + DI[d], j + DJ[d]))

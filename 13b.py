@@ -1,7 +1,4 @@
-from typing import List
-
-
-def parse_list(input: str) -> List[str]:
+def parse_list(input: str) -> list[str]:
     if input == "[]":
         return []
     elif input[0] != '[':  # 整数

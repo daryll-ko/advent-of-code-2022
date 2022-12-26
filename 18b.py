@@ -1,12 +1,11 @@
-from typing import Tuple, List
 import sys
 
 sys.setrecursionlimit(10 ** 4)
 
-Position = Tuple[int, int, int]
+Position = tuple[int, int, int]
 
 
-def surface_area(l: List[Position]) -> int:
+def surface_area(l: list[Position]) -> int:
     xy_occupied = [set([]) for _ in range(50)]
     yz_occupied = [set([]) for _ in range(50)]
     zx_occupied = [set([]) for _ in range(50)]

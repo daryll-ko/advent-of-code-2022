@@ -1,12 +1,9 @@
-from typing import List
-
-
-def parse_list(input: str) -> List[str]:
+def parse_list(input: str) -> list[str]:
     if input == "[]":
         return []
-    elif input[0] != '[': # 整数
+    elif input[0] != '[':  # 整数
         return [input]
-    else: # リスト
+    else:  # リスト
         left = 0
         current = ""
         result = []
@@ -29,7 +26,7 @@ def parse_list(input: str) -> List[str]:
         return result
 
 
-def order(one: str, two: str) -> int: # 0 OK, 1 NG, 2 引き分け
+def order(one: str, two: str) -> int:  # 0 OK, 1 NG, 2 引き分け
     one_list, two_list = parse_list(one), parse_list(two)
     N, M = len(one_list), len(two_list)
     i = 0
