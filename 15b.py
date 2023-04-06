@@ -1,4 +1,4 @@
-LIMIT = 4 * 10 ** 6
+LIMIT = 4 * 10**6
 
 possible_ranges = [[(0, LIMIT)] for _ in range(LIMIT + 1)]
 
@@ -52,5 +52,5 @@ with open("input.txt", "r") as input_file:
 for i in range(LIMIT + 1):
     if len(possible_ranges[i]) == 1:
         j, _ = possible_ranges[i][0]
-        print(4 * 10 ** 6 * j + i)
+        print(4 * 10**6 * j + i)
         exit()

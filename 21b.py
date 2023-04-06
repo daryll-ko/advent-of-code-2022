@@ -1,8 +1,8 @@
 # this is the most fun in my life I've had doing a manual binary search
 
-NO = -10 ** 18
+NO = -(10**18)
 
-tree = [[[], NO, '?'] for _ in range(5000)]  # [children, value, operation]
+tree = [[[], NO, "?"] for _ in range(5000)]  # [children, value, operation]
 visited = [False for _ in range(5000)]
 
 to_index = {}
@@ -13,19 +13,19 @@ def dfs(u: int) -> None:
     global tree
     visited[u] = True
     if tree[u][1] == NO:
-        assert (tree[u][2] != '?')
+        assert tree[u][2] != "?"
         c1 = tree[u][0][0]
         c2 = tree[u][0][1]
         for c in [c1, c2]:
             if not visited[c]:
                 dfs(c)
-        if tree[u][2] == '+':
+        if tree[u][2] == "+":
             tree[u][1] = tree[c1][1] + tree[c2][1]
-        elif tree[u][2] == '-':
+        elif tree[u][2] == "-":
             tree[u][1] = tree[c1][1] - tree[c2][1]
-        elif tree[u][2] == '*':
+        elif tree[u][2] == "*":
             tree[u][1] = tree[c1][1] * tree[c2][1]
-        elif tree[u][2] == '/':
+        elif tree[u][2] == "/":
             tree[u][1] = tree[c1][1] // tree[c2][1]
         else:
             print(tree[c1][1], tree[c2][1])
@@ -53,5 +53,5 @@ with open("text-files/input.txt") as input_file:
                     index += 1
             tree[to_index[name]][0].append(to_index[c1])
             tree[to_index[name]][0].append(to_index[c2])
-            tree[to_index[name]][2] = op if name != "root" else '='
+            tree[to_index[name]][2] = op if name != "root" else "="
     dfs(to_index["root"])

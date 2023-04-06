@@ -37,4 +37,8 @@ with open("text-files/input.txt") as input_file:
     for i in range(N):
         l_final[positions[i]] = l[i]
     zero = l_final.index(0)
-    print(l_final[(zero + 1000) % N] + l_final[(zero + 2000) % N] + l_final[(zero + 3000) % N])
+    print(
+        l_final[(zero + 1000) % N]
+        + l_final[(zero + 2000) % N]
+        + l_final[(zero + 3000) % N]
+    )

@@ -8,7 +8,7 @@ functions = [
     lambda old: old + 3,
     lambda old: old * 7,
     lambda old: old + 4,
-    lambda old: old + 7
+    lambda old: old + 7,
 ]
 
 tests = [
@@ -30,12 +30,12 @@ items = [
     deque([58, 89, 90, 96, 55]),
     deque([66, 73, 87, 58, 62, 67]),
     deque([85, 55, 89]),
-    deque([73, 80, 54, 94, 90, 52, 69, 58])
+    deque([73, 80, 54, 94, 90, 52, 69, 58]),
 ]
 
 inspections = [0 for _ in range(8)]
 
-for _ in range(10 ** 4):
+for _ in range(10**4):
     for i in range(8):
         while len(items[i]) > 0:
             item = items[i][0]

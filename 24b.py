@@ -1,7 +1,7 @@
 DI = [0, -1, 0, 1]
 DJ = [1, 0, -1, 0]
 
-INF = 10 ** 18
+INF = 10**18
 
 R = 27
 C = 122
@@ -14,13 +14,18 @@ blizzards_no_d = [set([]) for _ in range(TIME_LIMIT)]
 
 for i in range(R):
     for j in range(C):
-        if grid[i][j] != '#' and grid[i][j] != '.':
+        if grid[i][j] != "#" and grid[i][j] != ".":
             blizzards[0].append((i, j, ">^<v".index(grid[i][j])))
             blizzards_no_d[0].add((i, j))
 
 
 def within(i: int, j: int) -> bool:
-    return 1 <= i <= R - 2 and 1 <= j <= C - 2 or (i, j) == (0, 1) or (i, j) == (R - 1, C - 2)
+    return (
+        1 <= i <= R - 2
+        and 1 <= j <= C - 2
+        or (i, j) == (0, 1)
+        or (i, j) == (R - 1, C - 2)
+    )
 
 
 for t in range(1, TIME_LIMIT):

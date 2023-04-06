@@ -12,7 +12,7 @@ def match_score(one: str, two: str) -> int:
     elif one_score(one) == two_score(two):
         return (1 + two_score(two)) + 3
     else:
-        return (1 + two_score(two))
+        return 1 + two_score(two)
 
 
 with open("input.txt", "r") as input_file:

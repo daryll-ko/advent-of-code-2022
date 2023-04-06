@@ -1,10 +1,10 @@
 from collections import defaultdict
 
-INF = 10 ** 18
+INF = 10**18
 
-DI = [-1, -1, -1,  1,  1,  1,  0,  0]
+DI = [-1, -1, -1, 1, 1, 1, 0, 0]
 #     NW   N  NE  SW   S  SE   W   E
-DJ = [-1,  0,  1, -1,  0,  1, -1,  1]
+DJ = [-1, 0, 1, -1, 0, 1, -1, 1]
 
 # which indices in DI and DJ do we access?
 I = [[0, 1, 2], [3, 4, 5], [0, 6, 3], [2, 7, 5]]
@@ -20,7 +20,7 @@ elves = []
 
 for i in range(R):
     for j in range(C):
-        if grid[i][j] == '#':
+        if grid[i][j] == "#":
             elves.append((i, j))
 
 i_start = 0
@@ -56,7 +56,7 @@ for _ in range(ROUNDS):
         else:
             for i, j in elf_list:
                 new_elves.append((i, j))
-    assert (len(elves) == len(new_elves))
+    assert len(elves) == len(new_elves)
     elves = new_elves
     i_start = (i_start + 1) % 4
 

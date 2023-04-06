@@ -1,6 +1,6 @@
 import sys
 
-sys.setrecursionlimit(10 ** 4)
+sys.setrecursionlimit(10**4)
 
 Position = tuple[int, int, int]
 
@@ -42,10 +42,10 @@ droplet = []
 droplet_set = set([])
 visited = set([])
 
-with open("input.txt", 'r') as input_file:
+with open("input.txt", "r") as input_file:
     lines = input_file.readlines()
     for line in lines:
-        x, y, z = map(int, line.strip().split(','))
+        x, y, z = map(int, line.strip().split(","))
         droplet.append((x, y, z))
         droplet_set.add((x, y, z))
 
@@ -63,7 +63,11 @@ def dfs(current: Position, air: bool) -> None:
         if not within_bounds((x_to, y_to, z_to)):
             continue
         if air:
-            if (x_to, y_to, z_to) not in droplet_set and (x_to, y_to, z_to) not in visited:
+            if (x_to, y_to, z_to) not in droplet_set and (
+                x_to,
+                y_to,
+                z_to,
+            ) not in visited:
                 dfs((x_to, y_to, z_to), air)
         else:
             if (x_to, y_to, z_to) in droplet_set and (x_to, y_to, z_to) not in visited:

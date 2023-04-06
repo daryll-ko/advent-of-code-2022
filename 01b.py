@@ -3,7 +3,7 @@ with open("input.txt", "r") as input_file:
     current = 0
     amounts = []
     for line in lines:
-        if line == '\n':
+        if line == "\n":
             amounts.append(current)
             current = 0
         else:

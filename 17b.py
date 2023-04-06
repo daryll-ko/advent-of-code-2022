@@ -3,7 +3,7 @@ DJ = [1, 0, -1, 0]
 
 Rock = list[tuple[int, int]]
 
-to_direction = {'>': 0, '<': 2}
+to_direction = {">": 0, "<": 2}
 jet_pattern = list(map(lambda c: to_direction[c], list(input())))
 
 
@@ -56,7 +56,11 @@ def push_rock(rock: Rock, d: int) -> tuple[Rock, bool]:
     new_rock = []
     for i, j in rock:
         new_rock.append((i + DI[d], j + DJ[d]))
-        if not (1 <= i + DI[d]) or not (0 <= j + DJ[d] < 7) or i + DI[d] in occupied[j + DJ[d]]:
+        if (
+            not (1 <= i + DI[d])
+            or not (0 <= j + DJ[d] < 7)
+            or i + DI[d] in occupied[j + DJ[d]]
+        ):
             return rock, d % 2 == 0
     return new_rock, True
 
@@ -91,7 +95,11 @@ def simulate(rocks: int) -> int:  # returns height
             if top - i < 10:
                 top_10_hash += 1 << (j * 10 + (top - i))
         full_hash = (r % 5, jet_index, top_10_hash)
-        if not cycle_found and full_hash in to_rock_index and to_rock_index[full_hash] > 100:
+        if (
+            not cycle_found
+            and full_hash in to_rock_index
+            and to_rock_index[full_hash] > 100
+        ):
             cycle_offset = to_rock_index[full_hash]
             cycle_length = r - to_rock_index[full_hash]
             cycle_found = True
@@ -99,14 +107,16 @@ def simulate(rocks: int) -> int:  # returns height
     return top
 
 
-simulate(10 ** 4)  # setup cycle values
+simulate(10**4)  # setup cycle values
 
-N = 10 ** 12
+N = 10**12
 
 A = simulate(cycle_offset)
-B = (N - cycle_offset) // cycle_length * \
-    (simulate(cycle_offset + cycle_length) - simulate(cycle_offset))
-C = simulate(cycle_offset + (N - cycle_offset) %
-             cycle_length) - simulate(cycle_offset)
+B = (
+    (N - cycle_offset)
+    // cycle_length
+    * (simulate(cycle_offset + cycle_length) - simulate(cycle_offset))
+)
+C = simulate(cycle_offset + (N - cycle_offset) % cycle_length) - simulate(cycle_offset)
 
 print(A + B + C)

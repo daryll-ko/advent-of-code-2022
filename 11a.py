@@ -6,7 +6,7 @@ functions = [
     lambda old: old + 3,
     lambda old: old * 7,
     lambda old: old + 4,
-    lambda old: old + 7
+    lambda old: old + 7,
 ]
 
 tests = [
@@ -28,7 +28,7 @@ items = [
     [58, 89, 90, 96, 55],
     [66, 73, 87, 58, 62, 67],
     [85, 55, 89],
-    [73, 80, 54, 94, 90, 52, 69, 58]
+    [73, 80, 54, 94, 90, 52, 69, 58],
 ]
 
 inspections = [0 for _ in range(8)]

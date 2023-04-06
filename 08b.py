@@ -17,7 +17,10 @@ for i in range(N):
         for d in range(4):
             current = 0
             k = 1
-            while in_grid(i + k * DI[d], j + k * DJ[d]) and grid[i + k * DI[d]][j + k * DJ[d]] < grid[i][j]:
+            while (
+                in_grid(i + k * DI[d], j + k * DJ[d])
+                and grid[i + k * DI[d]][j + k * DJ[d]] < grid[i][j]
+            ):
                 current += 1
                 k += 1
             if in_grid(i + k * DI[d], j + k * DJ[d]):

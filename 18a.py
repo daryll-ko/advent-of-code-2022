@@ -4,10 +4,10 @@ zx_occupied = [set([]) for _ in range(50)]
 
 l = []
 
-with open("input.txt", 'r') as input_file:
+with open("input.txt", "r") as input_file:
     lines = input_file.readlines()
     for line in lines:
-        x, y, z = map(int, line.strip().split(','))
+        x, y, z = map(int, line.strip().split(","))
         l.append((x, y, z))
         xy_occupied[z].add((x, y))
         yz_occupied[x].add((y, z))

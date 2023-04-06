@@ -1,10 +1,10 @@
 from collections import defaultdict
 
-graph = [[[], []] for _ in range(10 ** 4)]  # children, content sizes
-parent = [-1 for _ in range(10 ** 4)]
+graph = [[[], []] for _ in range(10**4)]  # children, content sizes
+parent = [-1 for _ in range(10**4)]
 dir_name_to_node_numbers = defaultdict(lambda: [])
 
-dir_name_to_node_numbers['/'] = [0]
+dir_name_to_node_numbers["/"] = [0]
 node_number = 1
 current_node = 0
 
@@ -16,7 +16,7 @@ def dfs(u: int) -> int:
     current = sum(graph[u][1])
     for v in graph[u][0]:
         current += dfs(v)
-    if current <= 10 ** 5:
+    if current <= 10**5:
         answer += current
     return current
 
@@ -24,12 +24,12 @@ def dfs(u: int) -> int:
 with open("input.txt", "r") as input_file:
     lines = input_file.readlines()
     for line in lines:
-        if line[0] == '$':
+        if line[0] == "$":
             args = line.strip().split()
             if args[1] == "ls":
                 continue
             else:
-                if args[2] == '/':
+                if args[2] == "/":
                     current_node = 0
                 elif args[2] == "..":
                     current_node = parent[current_node]

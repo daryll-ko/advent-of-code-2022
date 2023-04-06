@@ -1,14 +1,14 @@
 from collections import defaultdict
 
-graph = [[[], []] for _ in range(10 ** 4)]  # children, content sizes
-parent = [-1 for _ in range(10 ** 4)]
+graph = [[[], []] for _ in range(10**4)]  # children, content sizes
+parent = [-1 for _ in range(10**4)]
 dir_name_to_node_numbers = defaultdict(lambda: [])
 
-dir_name_to_node_numbers['/'] = [0]
+dir_name_to_node_numbers["/"] = [0]
 node_number = 1
 current_node = 0
 
-answer = 10 ** 10
+answer = 10**10
 
 
 def dfs(u: int, min_to_delete: int) -> int:
@@ -24,12 +24,12 @@ def dfs(u: int, min_to_delete: int) -> int:
 with open("input.txt", "r") as input_file:
     lines = input_file.readlines()
     for line in lines:
-        if line[0] == '$':
+        if line[0] == "$":
             args = line.strip().split()
             if args[1] == "ls":
                 continue
             else:
-                if args[2] == '/':
+                if args[2] == "/":
                     current_node = 0
                 elif args[2] == "..":
                     current_node = parent[current_node]
@@ -48,8 +48,8 @@ with open("input.txt", "r") as input_file:
                 node_number += 1
             else:
                 graph[current_node][1].append(int(tokens[0]))
-    total = dfs(0, 10 ** 10)
-    unused = 7 * 10 ** 7 - total
-    min_to_delete = 3 * 10 ** 7 - unused
+    total = dfs(0, 10**10)
+    unused = 7 * 10**7 - total
+    min_to_delete = 3 * 10**7 - unused
     _ = dfs(0, min_to_delete)
     print(answer)

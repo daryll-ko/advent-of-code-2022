@@ -3,7 +3,7 @@ DJ = [1, 0, -1, 0]
 
 Rock = list[tuple[int, int]]
 
-to_direction = {'>': 0, '<': 2}
+to_direction = {">": 0, "<": 2}
 jet_pattern = list(map(lambda c: to_direction[c], list(input())))
 
 
@@ -56,7 +56,11 @@ def push_rock(rock: Rock, d: int) -> tuple[Rock, bool]:
     new_rock = []
     for i, j in rock:
         new_rock.append((i + DI[d], j + DJ[d]))
-        if not (1 <= i + DI[d]) or not (0 <= j + DJ[d] < 7) or i + DI[d] in occupied[j + DJ[d]]:
+        if (
+            not (1 <= i + DI[d])
+            or not (0 <= j + DJ[d] < 7)
+            or i + DI[d] in occupied[j + DJ[d]]
+        ):
             return rock, d % 2 == 0
     return new_rock, True
 

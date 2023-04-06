@@ -3,9 +3,9 @@ def one_score(hand: str) -> int:
 
 
 def match_score(one: str, two: str) -> int:
-    if two == 'X':
-        return (1 + (one_score(one) + 2) % 3)
-    elif two == 'Y':
+    if two == "X":
+        return 1 + (one_score(one) + 2) % 3
+    elif two == "Y":
         return (1 + one_score(one)) + 3
     else:
         return (1 + (one_score(one) + 1) % 3) + 6

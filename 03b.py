@@ -1,8 +1,8 @@
 def get_priority(c: str) -> int:
-    if 'a' <= c <= 'z':
-        return 1 + (ord(c) - ord('a'))
+    if "a" <= c <= "z":
+        return 1 + (ord(c) - ord("a"))
     else:
-        return 27 + (ord(c) - ord('A'))
+        return 27 + (ord(c) - ord("A"))
 
 
 with open("input.txt", "r") as input_file:

@@ -1,25 +1,25 @@
 def parse_list(input: str) -> list[str]:
     if input == "[]":
         return []
-    elif input[0] != '[':  # 整数
+    elif input[0] != "[":  # 整数
         return [input]
     else:  # リスト
         left = 0
         current = ""
         result = []
         for c in input[1:-1]:
-            if c == ',':
+            if c == ",":
                 if left == 0:
                     result.append(current)
                     current = ""
                 else:
-                    current += ','
-            elif c == '[':
+                    current += ","
+            elif c == "[":
                 left += 1
-                current += '['
-            elif c == ']':
+                current += "["
+            elif c == "]":
                 left -= 1
-                current += ']'
+                current += "]"
             else:
                 current += c
         result.append(current)
@@ -31,7 +31,7 @@ def order(one: str, two: str) -> int:  # 0 OK, 1 NG, 2 引き分け
     N, M = len(one_list), len(two_list)
     i = 0
     while i < min(N, M):
-        if one_list[i][0] != '[' and two_list[i][0] != '[':
+        if one_list[i][0] != "[" and two_list[i][0] != "[":
             a, b = int(one_list[i]), int(two_list[i])
             if a < b:
                 return 0
@@ -49,7 +49,7 @@ def order(one: str, two: str) -> int:  # 0 OK, 1 NG, 2 引き分け
     return 2
 
 
-with open("input.txt", 'r') as input_file:
+with open("input.txt", "r") as input_file:
     lines = input_file.readlines()
     N = len(lines)
     j = 0
